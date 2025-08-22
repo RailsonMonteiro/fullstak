@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Currículo – Railson Monteiro Vieira</title>
+  <style>
+    :root{
+      --bg:#0b1220;/* fundo geral */
+      --card:#0f172a;/* cards */
+      --muted:#94a3b8;/* texto secundário */
+      --text:#e2e8f0;/* texto principal */
+      --brand:#3b82f6;/* azul destaque */
+      --brand-2:#22d3ee;/* ciano */
+      --chip:#1e293b;/* pílulas */
+      --accent:#10b981;/* verde */
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --muted:#64748b; --text:#0f172a; --brand:#0ea5e9; --brand-2:#22c55e; --chip:#f1f5f9; --accent:#16a34a; }
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, rgba(34,211,238,.18), transparent 50%),
+                radial-gradient(900px 600px at 110% 20%, rgba(59,130,246,.18), transparent 45%), var(--bg);
+    }
+
+    /* Layout */
+    .wrap{ max-width:1000px; margin:32px auto; padding:20px; }
+    .card{ background:var(--card); border:1px solid rgba(148,163,184,.15); border-radius:18px; box-shadow:0 10px 30px rgba(2,6,23,.25); overflow:hidden; }
+
+    header{
+      position:relative; padding:28px 28px 24px; background:
+        linear-gradient(135deg, rgba(59,130,246,.18), rgba(34,211,238,.14));
+      border-bottom:1px solid rgba(148,163,184,.18);
+    }
+    header .top{
+      display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .avatar{
+      width:88px; height:88px; border-radius:18px; background:linear-gradient(145deg, var(--brand), var(--brand-2)); display:grid; place-items:center; color:white; font-weight:800; letter-spacing:.5px; box-shadow:0 6px 18px rgba(59,130,246,.35);
+    }
+    .me{ flex:1; }
+    .name{ font-size:28px; font-weight:800; letter-spacing:.2px; margin:0 0 6px; }
+    .role{ margin:0; color:var(--muted); font-size:14px; }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:linear-gradient(135deg, rgba(16,185,129,.18), rgba(34,197,94,.16)); border:1px solid rgba(16,185,129,.35); font-weight:700; text-transform:uppercase; letter-spacing:.8px; font-size:11px;
+    }
+    .badge svg{ width:16px; height:16px; }
+
+    .contact{ display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; }
+    .chip{ display:flex; align-items:center; gap:8px; padding:8px 12px; background:var(--chip); border-radius:999px; color:var(--text); border:1px solid rgba(148,163,184,.18); }
+    .chip svg{ width:16px; height:16px; opacity:.9; }
+
+    main{ display:grid; grid-template-columns: 320px 1fr; gap:24px; padding:24px; }
+    @media (max-width: 860px){ main{ grid-template-columns: 1fr; } }
+
+    aside, section{ background:transparent; }
+
+    .section{ background:rgba(2,6,23,.18); border:1px solid rgba(148,163,184,.12); border-radius:16px; padding:18px; }
+    .section h3{ margin:0 0 10px; font-size:15px; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); }
+
+    ul.clean{ list-style:none; padding:0; margin:0; }
+    ul.clean li{ padding:8px 0; border-bottom:1px dashed rgba(148,163,184,.18); }
+    ul.clean li:last-child{ border-bottom:none; }
+
+    .skill{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .bar{ height:8px; background:rgba(148,163,184,.2); border-radius:999px; overflow:hidden; flex:1; }
+    .bar > i{ display:block; height:100%; background:linear-gradient(90deg, var(--brand), var(--brand-2)); }
+
+    .item{ display:grid; gap:4px; padding:10px 0; }
+    .item h4{ margin:0; font-size:16px; }
+    .item .meta{ color:var(--muted); font-size:12px; }
+    .item p{ margin:0; }
+
+    footer{ padding:10px 22px 22px; display:flex; justify-content:space-between; align-items:center; gap:10px; border-top:1px solid rgba(148,163,184,.12); color:var(--muted); }
+    .actions{ display:flex; gap:10px; }
+    .btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(148,163,184,.25); background:var(--chip); color:var(--text); text-decoration:none; font-weight:600; }
+    .btn:hover{ filter:brightness(1.05); }
+
+    /* Impressão */
+    @media print{
+      body{ background:white; }
+      .wrap{ margin:0; padding:0; }
+      .card{ box-shadow:none; border:none; }
+      header{ background:white; }
+      .btn, .actions{ display:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="top">
+          <div class="avatar" aria-hidden="true">RMV</div>
+          <div class="me">
+            <h1 class="name">Railson Monteiro Vieira</h1>
+            <p class="role">Suporte & Manutenção • Infra Básica • Pacote Office</p>
+            <div class="contact">
+              <span class="chip" title="Localização">
+                <!-- location icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Santana – Rio do Sul – SC
+              </span>
+              <span class="chip" title="Telefone">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.3 21 3 12.7 3 2a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+                (91) 98406-1932 · WhatsApp
+              </span>
+              <span class="chip" title="E-mail">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                railsonmonteiro.tec@gmail.com
+              </span>
+            </div>
+          </div>
+          <span class="badge" aria-label="Área desejada: Estágio em Técnico em Informática">
+            <!-- bolt icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z"/></svg>
+            Estágio • Técnico em Informática
+          </span>
+        </div>
+      </header>
+
+      <main>
+        <aside>
+          <div class="section">
+            <h3>Resumo Profissional</h3>
+            <p>Estudante de Engenharia de Software e Técnico em Informática com experiência em manutenção de computadores, instalação de sistemas e atendimento ao usuário (Helpdesk). Busco oportunidade de <strong>estágio</strong> para aplicar conhecimentos práticos e apoiar equipes de TI com foco em qualidade e agilidade.</p>
+          </div>
+
+          <div class="section" style="margin-top:14px;">
+            <h3>Competências Técnicas</h3>
+            <ul class="clean">
+              <li class="skill"><span>Manutenção de Hardware/Software</span><span class="bar"><i style="width:90%"></i></span></li>
+              <li class="skill"><span>Instalação/Configuração de SO</span><span class="bar"><i style="width:85%"></i></span></li>
+              <li class="skill"><span>Pacote Office</span><span class="bar"><i style="width:85%"></i></span></li>
+              <li class="skill"><span>Lógica de Programação</span><span class="bar"><i style="width:75%"></i></span></li>
+              <li class="skill"><span>Redes (básico)</span><span class="bar"><i style="width:65%"></i></span></li>
+            </ul>
+          </div>
+
+          <div class="section" style="margin-top:14px;">
+            <h3>Soft Skills</h3>
+            <ul class="clean">
+              <li>Proatividade e organização</li>
+              <li>Aprendizado rápido</li>
+              <li>Espírito empreendedor</li>
+              <li>Trabalho em equipe</li>
+            </ul>
+          </div>
+
+          <div class="section" style="margin-top:14px;">
+            <h3>Contatos</h3>
+            <ul class="clean">
+              <li>Telefone: (91) 98406-1932</li>
+              <li>E-mail: railsonmonteiro.tec@gmail.com</li>
+              <li>Localização: Santana – Rio do Sul – SC</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section>
+          <div class="section">
+            <h3>Formação</h3>
+            <div class="item">
+              <h4>Engenharia de Software <span class="meta">— UNIASSELVI · Cursando</span></h4>
+            </div>
+            <div class="item">
+              <h4>Ensino Médio Completo <span class="meta">— 2014</span></h4>
+            </div>
+          </div>
+
+          <div class="section" style="margin-top:14px;">
+            <h3>Experiência Profissional</h3>
+            <div class="item">
+              <h4>Técnico de Informática (Helpdesk)</h4>
+              <div class="meta">Hospital Adventista de Barcarena · jun/2021 — mai/2023</div>
+              <p>Manutenção de computadores, instalação de sistemas operacionais, configuração básica de rede e atendimento aos usuários de TI com foco em resolução ágil.</p>
+            </div>
+            <div class="item">
+              <h4>Gerente de Produção e Operações</h4>
+              <div class="meta">MV Comunicação Visual · ago/2017 — jun/2021</div>
+              <p>Gestão de rotinas, prazos e equipe; interface com clientes e controle de qualidade.</p>
+            </div>
+            <div class="item">
+              <h4>Ajudante</h4>
+              <div class="meta">ZORTÉA Construções · out/2015 — set/2016</div>
+            </div>
+          </div>
+
+          <div class="section" style="margin-top:14px;">
+            <h3>Cursos & Certificações</h3>
+            <ul class="clean">
+              <li>Eletricista Industrial — SENAI (2017)</li>
+              <li>Lógica de Programação — SENAI (2016)</li>
+              <li>Informática Avançada — SENAI (2016)</li>
+              <li>Metrologia, Segurança do Trabalho, Educação Ambiental — SENAI (2016)</li>
+              <li>Pacote Office — ITFOREST (2020)</li>
+              <li>Designer Gráfico — Designer na Prática (2023)</li>
+              <li>CNH AB</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small>Currículo atualizado • foco em <strong>Estágio em Técnico em Informática</strong></small>
+        <div class="actions">
+          <a class="btn" href="#" onclick="window.print()">Baixar em PDF</a>
+          <a class="btn" href="#" onclick="toggleTheme()" id="themeBtn">Alternar tema</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme(){
+      const light = getComputedStyle(document.documentElement).getPropertyValue('--bg') === '#f8fafc';
+      if(light){
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#0f172a');
+        document.documentElement.style.setProperty('--muted','#94a3b8');
+        document.documentElement.style.setProperty('--text','#e2e8f0');
+        document.documentElement.style.setProperty('--brand','#3b82f6');
+        document.documentElement.style.setProperty('--brand-2','#22d3ee');
+        document.documentElement.style.setProperty('--chip','#1e293b');
+        document.documentElement.style.setProperty('--accent','#10b981');
+      }else{
+        document.documentElement.style.setProperty('--bg','#f8fafc');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--muted','#64748b');
+        document.documentElement.style.setProperty('--text','#0f172a');
+        document.documentElement.style.setProperty('--brand','#0ea5e9');
+        document.documentElement.style.setProperty('--brand-2','#22c55e');
+        document.documentElement.style.setProperty('--chip','#f1f5f9');
+        document.documentElement.style.setProperty('--accent','#16a34a');
+      }
+    }
+  </script>
+</body>
+</html>
